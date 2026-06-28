@@ -1,0 +1,3 @@
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+export default function NotFound(){ return <main className="grid min-h-screen place-items-center bg-premium-gradient px-6"><div className="text-center"><p className="text-sm font-bold uppercase tracking-[.3em] text-blue-600">404</p><h1 className="mt-4 text-5xl font-black tracking-tight">This blueprint is missing.</h1><p className="mt-4 text-muted-foreground">The page you requested does not exist or was moved.</p><Button asChild className="mt-8"><Link href="/dashboard">Return to dashboard</Link></Button></div></main> }

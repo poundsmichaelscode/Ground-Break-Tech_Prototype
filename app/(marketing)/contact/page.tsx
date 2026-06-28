@@ -1,0 +1,4 @@
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+export default function Page(){return <main className="min-h-screen bg-premium-gradient px-6 py-10"><div className="mx-auto max-w-5xl"><Button asChild variant="ghost"><Link href="/">← Back home</Link></Button><section className="mt-16"><h1 className="text-5xl font-black tracking-tight">Contact</h1><p className="mt-5 max-w-3xl text-lg leading-8 text-muted-foreground">Request a demo, join the beta, or speak with the Groundbreak implementation team.</p></section><div className="mt-12 grid gap-5 md:grid-cols-3">{["Premium UX","Enterprise workflow","Offline-first"].map(item=><Card key={item}><h3 className="font-black">{item}</h3><p className="mt-3 text-sm leading-6 text-muted-foreground">Designed from scratch with refined spacing, accessible controls, and polished micro-interactions.</p></Card>)}</div></div></main>}

@@ -1,0 +1,13 @@
+import Link from "next/link";
+import { projects, approvals, materials } from "@/data/mock";
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Progress } from "@/components/ui/progress";
+import { TableCard } from "@/components/dashboard/table-card";
+import { ProjectCard } from "@/components/dashboard/project-card";
+import { formatCurrency } from "@/lib/utils";
+
+export default function Page(){
+ return <div className="space-y-8"><section className="rounded-[2rem] border bg-premium-gradient p-8"><Badge tone="blue">Groundbreak module</Badge><h1 className="mt-4 text-4xl font-black tracking-tight">Budget Dashboard</h1><p className="mt-3 max-w-3xl text-muted-foreground">Live cost breakdown, upgrade costs, running totals, charts, tables, and material pricing.</p></section><section className="grid gap-5 lg:grid-cols-3">{projects.map(p=><ProjectCard key={p.id} project={p}/>)}</section><section className="grid gap-5 xl:grid-cols-[1fr_.75fr]"><TableCard title="Operational records" description="Realistic data table styled for construction operations."><div className="overflow-hidden rounded-2xl border"><table className="w-full text-sm"><thead className="bg-muted text-left"><tr><th className="p-4">Item</th><th className="p-4">Project</th><th className="p-4">Impact</th><th className="p-4">Status</th></tr></thead><tbody>{approvals.map(a=><tr key={a.id} className="border-t"><td className="p-4 font-semibold">{a.title}</td><td className="p-4 text-muted-foreground">{a.project}</td><td className="p-4">{formatCurrency(a.amount)}</td><td className="p-4"><Badge tone={a.status==='Pending'?'blue':'green'}>{a.status}</Badge></td></tr>)}</tbody></table></div></TableCard><Card><h3 className="text-xl font-black">Module health</h3><p className="mt-2 text-sm leading-6 text-muted-foreground">Designed for keyboard navigation, enterprise spacing, clear hierarchy, and responsive layouts.</p><div className="mt-8 space-y-5"><div><div className="mb-2 flex justify-between text-sm"><span>Workflow completeness</span><b>86%</b></div><Progress value={86}/></div><div><div className="mb-2 flex justify-between text-sm"><span>Offline coverage</span><b>94%</b></div><Progress value={94}/></div><div className="grid grid-cols-2 gap-3">{materials.slice(0,2).map(m=><div key={m.id} className="rounded-2xl bg-muted p-4"><p className="font-bold">{m.name}</p><p className="text-sm text-muted-foreground">{formatCurrency(m.price)} / unit</p></div>)}</div><Button asChild className="w-full" variant="secondary"><Link href="/dashboard">Open detailed workflow</Link></Button></div></Card></section></div>
+}

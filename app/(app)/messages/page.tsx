@@ -1,0 +1,8 @@
+import Link from "next/link";
+import { Paperclip, Send } from "lucide-react";
+import { Avatar } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+const people=["Avery Johnson","Field Lead","Design Studio","Admin Ops"];
+export default function MessagesPage(){return <div className="grid min-h-[720px] gap-5 lg:grid-cols-[340px_1fr]"><Card className="p-3">{people.map((p,i)=><div key={p} className="flex items-center gap-3 rounded-2xl p-4 hover:bg-muted"><Avatar name={p}/><div><p className="font-bold">{p}</p><p className="text-sm text-muted-foreground">{i===0?'Kitchen upgrade looks good…':'Shared blueprint attachment'}</p></div></div>)}</Card><Card className="flex flex-col"><div className="flex items-center gap-3 border-b pb-5"><Avatar name="Avery Johnson"/><div><h1 className="font-black">Palm Residence conversation</h1><p className="text-sm text-muted-foreground">Read receipts · attachments · blueprint sharing</p></div></div><div className="flex-1 space-y-4 py-6"><div className="max-w-lg rounded-3xl bg-muted p-4"><p className="text-sm leading-6">Can we preview the white oak flooring with matte black fixtures before approval?</p></div><div className="ml-auto max-w-lg rounded-3xl bg-blue-600 p-4 text-white"><p className="text-sm leading-6">Yes. I added it to the sandbox visualizer and attached the cost impact.</p></div></div><div className="flex gap-2 border-t pt-4"><Button variant="outline" size="icon"><Paperclip className="h-4 w-4"/></Button><Input placeholder="Write a message…"/><Button variant="secondary"><Send className="h-4 w-4"/>Send</Button></div></Card></div>}
