@@ -1,2 +1,2 @@
-import { BlueprintWorkspace } from "@/components/blueprint/blueprint-workspace";
-export default function BlueprintViewerPage(){ return <div className="space-y-6"><section><h1 className="text-4xl font-black tracking-tight">Blueprint Viewer</h1><p className="mt-2 text-muted-foreground">Zoom, pan, measurement overlay, comments, annotations, offline badge, version history, and file metadata.</p></section><BlueprintWorkspace/></div> }
+import { EnhancedBlueprintWorkspace } from "@/components/blueprint/enhanced-blueprint-workspace";
+export default function BlueprintViewerPage(){ return <EnhancedBlueprintWorkspace/>; }

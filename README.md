@@ -1,71 +1,70 @@
-# Groundbreak Tech — Production-Ready MVP Prototype
+# Groundbreak Tech — Enterprise MVP v4
 
-Groundbreak Tech is a premium construction management SaaS MVP built with Next.js App Router, React, TypeScript, Tailwind CSS, shadcn-style UI primitives, role-aware navigation, mock APIs, and realistic construction demo data.
+Premium construction management SaaS for contractors, homeowners, and administrators.
 
-## What is included
+## Stack
 
-- Role-based authentication mock for Administrator, Contractor, and Homeowner
-- Protected navigation and route access rules
-- Free and Premium plan logic with locked feature prompts
-- Redesigned Billing page with plan comparison, usage, payment history, saved card, invoices, and mock Stripe-ready actions
-- Polished Profile and Settings pages
-- Proposal management module with create, edit, duplicate, delete, preview, send, PDF mock, and convert-to-contract mock actions
-- Contract management module with milestones, payment schedule, deliverables, attachments, and digital signature placeholder
-- Invoice management module with line items, payment status, PDF mock, duplicate, send, mark paid, and delete actions
-- Improved role-aware dashboards
-- Project, budget, approvals, messages, notifications, materials, analytics, offline, blueprint viewer, and admin pages
-- Mock API routes under `/api/mock/*`
-- Responsive layouts and accessible controls
+- Next.js 15.1.9 App Router
+- React 19.0.1
+- TypeScript
+- Tailwind CSS
+- shadcn-style UI primitives
+- Framer Motion-ready architecture
+- Responsive desktop, tablet, and mobile layouts
+- Mock API routes for realistic demo workflows
 
-## Install
+## New Enterprise Modules
 
-Use Node.js 20+.
+- Role-based dashboards for Administrator, Contractor, and Homeowner
+- Task management with Kanban, table, and calendar views
+- Schedule & calendar with construction milestones, inspections, deliveries, crew planning, and reminders
+- Daily Site Logs with weather, crew, equipment, materials, safety, photos, approval state, and export actions
+- RFI management with assignments, priorities, attachments, and response history
+- AI Assistant chat interface with suggested prompts and file upload placeholder
+- Team management with roles, project assignments, status, contact info, and permissions simulation
+- Enhanced Blueprint Viewer with drawing thumbnails, upload simulation, zoom, pan, measurements, grid, markups, comparison, metadata, layers, version history, and offline status
+- Enhanced Projects page with realistic construction photography, team avatars, budgets, milestones, and quick actions
+- Premium subscription logic where upgrade immediately unlocks premium modules in local storage
 
-```bash
-rm -rf node_modules package-lock.json .next
-npm cache clean --force
-npm install --legacy-peer-deps --no-audit --no-fund --fetch-timeout=120000
-npm run dev
-```
-
-If your network times out with npm, use pnpm:
+## Run locally
 
 ```bash
-npm install -g pnpm
-rm -rf node_modules package-lock.json pnpm-lock.yaml .next
-pnpm install
+nvm use 20
+corepack enable
+corepack prepare pnpm@10.18.3 --activate
+pnpm install --config.dangerously-allow-all-builds=true
 pnpm dev
 ```
 
 Open `http://localhost:3000`.
 
-## Demo login
+## Important routes
 
-Go to `/login` and select one role:
+- `/dashboard`
+- `/projects`
+- `/tasks`
+- `/schedule`
+- `/daily-logs`
+- `/rfis`
+- `/ai-assistant`
+- `/team`
+- `/blueprint-viewer`
+- `/proposals`
+- `/contracts`
+- `/invoices`
+- `/billing`
+- `/upgrade`
 
-- Administrator: full system access
-- Contractor: projects, blueprints, approvals, proposals, contracts, invoices, budgets, messages
-- Homeowner: project, budget, approvals, invoices, proposals, contracts, messages, profile, settings
+## Role testing
 
-The auth flow is intentionally localStorage-based for MVP demo use. It is structured so a real auth provider can replace it later.
+Go to `/login` and choose:
 
-## Recommended production next steps
+- Administrator
+- Contractor
+- Homeowner
 
-- Replace localStorage auth with NextAuth/Auth.js, Clerk, or custom JWT sessions
-- Add PostgreSQL schema with Prisma or Drizzle
-- Replace mock API routes with real CRUD endpoints
-- Integrate Stripe checkout, billing portal, invoices, and webhooks
-- Add file upload storage for blueprints and attachments
-- Add real PDF generation using server-side rendering
-- Add audit log persistence
+The sidebar, dashboard, and protected pages adapt by role.
 
-## Latest public-page polish update
+## Deployment
 
-This version separates the marketing pages so each page has a distinct purpose and layout:
-
-- `/features` now focuses on product capabilities by user workflow.
-- `/pricing` now focuses on Free vs Premium plan decisions and upgrade limits.
-- `/about` now tells the company/product story and construction problem being solved.
-- `/contact` now includes a working mock demo-request form and contact options.
-
-Gradient styling has been removed from the public marketing experience and replaced with plain premium colors, clean borders, whitespace, solid cards, and consistent typography.
+The project uses patched Next.js `15.1.9` and React `19.0.1` for Vercel compatibility.

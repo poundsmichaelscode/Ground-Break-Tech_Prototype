@@ -11,6 +11,12 @@ export const routePermissions: Record<string, Role[]> = {
   "/approvals": ["admin", "contractor", "buyer"],
   "/budget": ["admin", "contractor", "buyer"],
   "/messages": ["admin", "contractor", "buyer"],
+  "/tasks": ["admin", "contractor"],
+  "/schedule": ["admin", "contractor"],
+  "/daily-logs": ["admin", "contractor", "buyer"],
+  "/rfis": ["admin", "contractor"],
+  "/ai-assistant": ["admin", "contractor", "buyer"],
+  "/team": ["admin", "contractor"],
   "/proposals": ["admin", "contractor", "buyer"],
   "/contracts": ["admin", "contractor", "buyer"],
   "/invoices": ["admin", "contractor", "buyer"],
@@ -32,6 +38,6 @@ export function canAccess(role: Role, href: string) {
 }
 
 export function isPremiumLocked(plan: Plan, feature: string) {
-  const premiumFeatures = ["offline", "proposal", "invoice", "analytics", "reports", "unlimited", "team"];
+  const premiumFeatures = ["offline", "proposal", "invoice", "analytics", "reports", "unlimited", "team", "ai", "rfi", "daily", "schedule", "blueprint"];
   return plan === "free" && premiumFeatures.some((item) => feature.toLowerCase().includes(item));
 }

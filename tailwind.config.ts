@@ -27,8 +27,6 @@ const config: Config = {
         glass: "0 20px 60px -28px rgba(37,99,235,.45)"
       },
       backgroundImage: {
-        "hero-grid": "linear-gradient(to right, rgba(15,23,42,.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(15,23,42,.08) 1px, transparent 1px)",
-        "premium-gradient": "radial-gradient(circle at top left, rgba(37,99,235,.22), transparent 34%), radial-gradient(circle at top right, rgba(16,185,129,.20), transparent 28%)"
       }
     }
   },
