@@ -58,3 +58,14 @@ The auth flow is intentionally localStorage-based for MVP demo use. It is struct
 - Add file upload storage for blueprints and attachments
 - Add real PDF generation using server-side rendering
 - Add audit log persistence
+
+## Latest public-page polish update
+
+This version separates the marketing pages so each page has a distinct purpose and layout:
+
+- `/features` now focuses on product capabilities by user workflow.
+- `/pricing` now focuses on Free vs Premium plan decisions and upgrade limits.
+- `/about` now tells the company/product story and construction problem being solved.
+- `/contact` now includes a working mock demo-request form and contact options.
+
+Gradient styling has been removed from the public marketing experience and replaced with plain premium colors, clean borders, whitespace, solid cards, and consistent typography.
